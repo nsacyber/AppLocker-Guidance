@@ -1,0 +1,9 @@
+When setting up an event forwarding subscription, it is necessary to tell the subscription 
+which events are desired for forwarding.  The following event query can be used within an 
+event subscription to select the AppLocker Meta Events for forwarding:
+
+<QueryList>
+  <Query Id="0" Path="AppLocker">
+    <Select Path="AppLocker">*[System[(Level=1  or Level=2 or Level=3)]]</Select>
+  </Query>
+</QueryList>

@@ -1,0 +1,173 @@
+﻿<!--
+This file is an AppLocker Policy xml file that can be imported using the Group Policy Management Editor 
+to automatically configure a starting location-based application whitelisting policy for initial auditing.
+Once applied, the events will need to be reviewed to tailor the policy to the network.
+-->
+<AppLockerPolicy Version="1">
+  <RuleCollection Type="Dll" EnforcementMode="AuditOnly">
+    <FilePathRule Id="1d04fdc7-5e29-45b1-a0d7-f7e9293774f8" Name="Allows administrators to execute all DLLs" Description="Allows members of the local Administrators group to load all DLLs." UserOrGroupSid="S-1-5-32-544" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="7ca2deae-991c-4e26-b688-98137f9cc777" Name="Allow everyone to execute all DLLs located in the Windows folder" Description="Allows members of the Everyone group to load DLLs located in the Windows folder." UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\*" />
+      </Conditions>
+      <Exceptions>
+        <FilePathCondition Path="%SYSTEM32%\catroot2\*" />
+        <FilePathCondition Path="%SYSTEM32%\com\dmp\*" />
+        <FilePathCondition Path="%SYSTEM32%\FxsTmp\*" />
+        <FilePathCondition Path="%SYSTEM32%\spool\drivers\color\*" />
+        <FilePathCondition Path="%SYSTEM32%\spool\PRINTERS\*" />
+        <FilePathCondition Path="%SYSTEM32%\spool\SERVERS\*" />
+        <FilePathCondition Path="%SYSTEM32%\Tasks\*" />
+        <FilePathCondition Path="%WINDIR%\Debug\*" />
+        <FilePathCondition Path="%WINDIR%\PCHEALTH\ERRORREP\*" />
+        <FilePathCondition Path="%WINDIR%\Registration\*" />
+        <FilePathCondition Path="%WINDIR%\SysWOW64\com\dmp\*" />
+        <FilePathCondition Path="%WINDIR%\SysWOW64\FxsTmp\*" />
+        <FilePathCondition Path="%WINDIR%\SysWOW64\Tasks\*" />
+        <FilePathCondition Path="%WINDIR%\Tasks\*" />
+        <FilePathCondition Path="%WINDIR%\Temp\*" />
+        <FilePathCondition Path="%WINDIR%\tracing\*" />
+      </Exceptions>
+    </FilePathRule>
+    <FilePathRule Id="f36fbeba-ab50-48c0-9361-41af365d82ce" Name="Allow everyone to execute all DLLs located in the Program Files folder" Description="Allows members of the Everyone group to load DLLs that are located in the Program Files folder." UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\*" />
+      </Conditions>
+    </FilePathRule>
+  </RuleCollection>
+  <RuleCollection Type="Exe" EnforcementMode="AuditOnly">
+    <FilePublisherRule Id="187ae870-255e-42d7-8ef9-9a8434a70716" Name="Prevent administrators from easily running the Internet Explorer web browser" Description="" UserOrGroupSid="S-1-5-32-544" Action="Deny">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=MICROSOFT CORPORATION, L=REDMOND, S=WASHINGTON, C=US" ProductName="WINDOWS® INTERNET EXPLORER" BinaryName="IEXPLORE.EXE">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+    </FilePublisherRule>
+    <FilePublisherRule Id="230ebde7-123f-4f56-9caf-a412e5265300" Name="Prevent administrators from easily running the Outlook email client" Description="" UserOrGroupSid="S-1-5-32-544" Action="Deny">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=MICROSOFT CORPORATION, L=REDMOND, S=WASHINGTON, C=US" ProductName="MICROSOFT OFFICE OUTLOOK" BinaryName="OUTLOOK.EXE">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+    </FilePublisherRule>
+    <FilePublisherRule Id="54d44e7f-44b7-4d8d-961e-6d9c47e03196" Name="Prevent administrators from easily running the Thunderbird email client" Description="" UserOrGroupSid="S-1-5-32-544" Action="Deny">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=MOZILLA MESSAGING INC., L=MOUNTAIN VIEW, S=CALIFORNIA, C=US" ProductName="THUNDERBIRD" BinaryName="thunderbird.exe">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+    </FilePublisherRule>
+    <FilePublisherRule Id="97bca7b1-6ff4-40a5-a1fe-e8e8535f6e1e" Name="Prevent administrators from easily running the Chrome web browser" Description="" UserOrGroupSid="S-1-5-32-544" Action="Deny">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=GOOGLE INC, L=MOUNTAIN VIEW, S=CALIFORNIA, C=US" ProductName="GOOGLE CHROME" BinaryName="chrome.exe">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+    </FilePublisherRule>
+    <FilePublisherRule Id="980f805b-bc66-43c7-95c4-90ef50fe5b04" Name="Prevent administrators from easily running the Firefox web browser" Description="" UserOrGroupSid="S-1-5-32-544" Action="Deny">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=MOZILLA CORPORATION, L=MOUNTAIN VIEW, S=CALIFORNIA, C=US" ProductName="FIREFOX" BinaryName="firefox.exe">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+    </FilePublisherRule>
+    <FilePublisherRule Id="a88c9192-bbed-4dfe-b435-d0ca25f6576e" Name="Prevent administrators from easily running the Opera web browser" Description="" UserOrGroupSid="S-1-5-32-544" Action="Deny">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=OPERA SOFTWARE ASA, S=OSLO, C=NO" ProductName="OPERA" BinaryName="opera.exe">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+    </FilePublisherRule>
+    <FilePublisherRule Id="f53c8fc8-d0dd-43c4-b874-57f31ba6f4aa" Name="Prevent administrators from easily running the Safari web browser" Description="" UserOrGroupSid="S-1-5-32-544" Action="Deny">
+      <Conditions>
+        <FilePublisherCondition PublisherName="O=APPLE INC., L=CUPERTINO, S=CALIFORNIA, C=US" ProductName="SAFARI" BinaryName="Safari.exe">
+          <BinaryVersionRange LowSection="*" HighSection="*" />
+        </FilePublisherCondition>
+      </Conditions>
+    </FilePublisherRule>
+    <FilePathRule Id="1712f2de-e1b6-4d3d-85a9-a7da49b796c1" Name="Allow everyone to execute all files located in the Program Files folder" Description="Allows members of the Everyone group to run applications that are located in the Program Files folder." UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="afd4074c-4b47-4b55-bb6d-f35ea215408b" Name="Allow everyone to execute all files located in the Windows folder" Description="Allows members of the Everyone group to run applications that are located in the Windows folder." UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\*" />
+      </Conditions>
+      <Exceptions>
+        <FilePathCondition Path="%SYSTEM32%\catroot2\*" />
+        <FilePathCondition Path="%SYSTEM32%\com\dmp\*" />
+        <FilePathCondition Path="%SYSTEM32%\FxsTmp\*" />
+        <FilePathCondition Path="%SYSTEM32%\spool\drivers\color\*" />
+        <FilePathCondition Path="%SYSTEM32%\spool\PRINTERS\*" />
+        <FilePathCondition Path="%SYSTEM32%\spool\SERVERS\*" />
+        <FilePathCondition Path="%SYSTEM32%\Tasks\*" />
+        <FilePathCondition Path="%WINDIR%\Debug\*" />
+        <FilePathCondition Path="%WINDIR%\PCHEALTH\ERRORREP\*" />
+        <FilePathCondition Path="%WINDIR%\Registration\*" />
+        <FilePathCondition Path="%WINDIR%\SysWOW64\com\dmp\*" />
+        <FilePathCondition Path="%WINDIR%\SysWOW64\FxsTmp\*" />
+        <FilePathCondition Path="%WINDIR%\SysWOW64\Tasks\*" />
+        <FilePathCondition Path="%WINDIR%\Tasks\*" />
+        <FilePathCondition Path="%WINDIR%\Temp\*" />
+        <FilePathCondition Path="%WINDIR%\tracing\*" />
+      </Exceptions>
+    </FilePathRule>
+    <FilePathRule Id="f301f291-10d9-4423-8f9c-a78afe9d4ea5" Name="Allow administrators to execute all files" Description="Allows members of the local Administrators group to run all applications." UserOrGroupSid="S-1-5-32-544" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="*" />
+      </Conditions>
+    </FilePathRule>
+  </RuleCollection>
+  <RuleCollection Type="Msi" EnforcementMode="AuditOnly">
+    <FilePathRule Id="0b075828-da4a-41fc-b3b4-9ac83ad18add" Name="Allow everyone to run all Windows Installer files located in the Windows\Installer folder." Description="Allows members of the Everyone group to run all Windows Installer files located in %systemdrive%\Windows\Installer." UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\Installer\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="4833728f-cf7e-4797-a847-c979e29b597a" Name="Allow administrators to run all Windows Installer files" Description="Allows members of the local Administrators group to run all Windows Installer files." UserOrGroupSid="S-1-5-32-544" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="*" />
+      </Conditions>
+    </FilePathRule>
+  </RuleCollection>
+  <RuleCollection Type="Script" EnforcementMode="AuditOnly">
+    <FilePathRule Id="4a4170c6-feb8-44f6-bebf-78a319f197fe" Name="Allow everyone to run all scripts located in the Program Files folder" Description="Allows members of the Everyone group to run scripts that are located in the Program Files folder." UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%PROGRAMFILES%\*" />
+      </Conditions>
+    </FilePathRule>
+    <FilePathRule Id="8f42d1d3-5f29-469d-8f37-6f01f6c3b2f4" Name="Allow everyone to run all scripts located in the Windows folder" Description="Allows members of the Everyone group to run scripts that are located in the Windows folder." UserOrGroupSid="S-1-1-0" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="%WINDIR%\*" />
+      </Conditions>
+      <Exceptions>
+        <FilePathCondition Path="%SYSTEM32%\catroot2\*" />
+        <FilePathCondition Path="%SYSTEM32%\com\dmp\*" />
+        <FilePathCondition Path="%SYSTEM32%\FxsTmp\*" />
+        <FilePathCondition Path="%SYSTEM32%\spool\drivers\color\*" />
+        <FilePathCondition Path="%SYSTEM32%\spool\PRINTERS\*" />
+        <FilePathCondition Path="%SYSTEM32%\spool\SERVERS\*" />
+        <FilePathCondition Path="%SYSTEM32%\Tasks\*" />
+        <FilePathCondition Path="%WINDIR%\Debug\*" />
+        <FilePathCondition Path="%WINDIR%\PCHEALTH\ERRORREP\*" />
+        <FilePathCondition Path="%WINDIR%\Registration\*" />
+        <FilePathCondition Path="%WINDIR%\SysWOW64\com\dmp\*" />
+        <FilePathCondition Path="%WINDIR%\SysWOW64\FxsTmp\*" />
+        <FilePathCondition Path="%WINDIR%\SysWOW64\Tasks\*" />
+        <FilePathCondition Path="%WINDIR%\Tasks\*" />
+        <FilePathCondition Path="%WINDIR%\Temp\*" />
+        <FilePathCondition Path="%WINDIR%\tracing\*" />
+      </Exceptions>
+    </FilePathRule>
+    <FilePathRule Id="ed97d0cb-15ff-430f-b82c-8d7832957725" Name="All scripts" Description="Allows members of the local Administrators group to run all scripts." UserOrGroupSid="S-1-5-32-544" Action="Allow">
+      <Conditions>
+        <FilePathCondition Path="*" />
+      </Conditions>
+    </FilePathRule>
+  </RuleCollection>
+</AppLockerPolicy>

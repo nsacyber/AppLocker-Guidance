@@ -1,0 +1,5 @@
+<!--
+This file is an Event Viewer custom view that can be imported to automatically filter and show only 
+the AppLocker warning and error events.
+-->
+<ViewerConfig><QueryConfig><QueryParams><Simple><BySource>True</BySource><Channel>Microsoft-Windows-AppLocker/EXE and DLL,Microsoft-Windows-AppLocker/MSI and Script</Channel><Source>Microsoft-Windows-AppLocker</Source><RelativeTimeInfo>0</RelativeTimeInfo><Level>1,2,3</Level></Simple></QueryParams><QueryNode><Name>AppLocker Warnings and Errors</Name><Description>AppLocker Warnings and Errors Custom View</Description><QueryList><Query Id="0" Path="Microsoft-Windows-AppLocker/EXE and DLL"><Select Path="Microsoft-Windows-AppLocker/EXE and DLL">*[System[Provider[@Name='Microsoft-Windows-AppLocker'] and (Level=1  or Level=2 or Level=3)]]</Select><Select Path="Microsoft-Windows-AppLocker/MSI and Script">*[System[Provider[@Name='Microsoft-Windows-AppLocker'] and (Level=1  or Level=2 or Level=3)]]</Select></Query></QueryList></QueryNode></QueryConfig></ViewerConfig>

@@ -1,0 +1,10 @@
+When setting up an event forwarding subscription, it is necessary to tell the subscription 
+which events are desired for forwarding.  The following event query can be used within an 
+event subscription to select only the AppLocker warning and error events for forwarding:
+
+<QueryList>
+  <Query Id="0" Path="Microsoft-Windows-AppLocker/EXE and DLL">
+    <Select Path="Microsoft-Windows-AppLocker/EXE and DLL">*[System[Provider[@Name='Microsoft-Windows-AppLocker'] and (Level=1  or Level=2 or Level=3)]]</Select>
+    <Select Path="Microsoft-Windows-AppLocker/MSI and Script">*[System[Provider[@Name='Microsoft-Windows-AppLocker'] and (Level=1  or Level=2 or Level=3)]]</Select>
+  </Query>
+</QueryList>
