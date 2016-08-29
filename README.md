@@ -1,6 +1,8 @@
 # AppLocker Guidance
 
-This project contains scripts and configuration files for aiding administrators in implementing Microsoft AppLocker as outlined in the [Application Whitelisting using Microsoft AppLocker](https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm) paper.
+This project contains scripts and configuration files for aiding administrators in implementing Microsoft AppLocker as outlined in the [Application Whitelisting using Microsoft AppLocker](https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm) paper. 
+
+**The Group Policy Object (GPO) provided in this repository is for Windows 7 and does not work with with Windows 8/8.1/10**. A GPO for Windows 10 can be found in the [AppLocker folder](https://github.com/iadgov/Secure-Host-Baseline/tree/master/AppLocker) in the [Secure Host Baseline repository](https://github.com/iadgov/Secure-Host-Baseline/).
 
 ## License
 This Work was prepared by a United States Government employee and, therefore, is excluded from copyright by Section 105 of the Copyright Act of 1976.
