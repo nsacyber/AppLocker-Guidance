@@ -1,8 +1,18 @@
 # AppLocker Guidance
 
+Microsoft AppLocker is an [application whitelisting](https://www.iad.gov/iad/library/ia-guidance/security-tips/application-whitelisting.cfm) feature built into Windows. The use of application whitelisting is one of [IAD's top 10 mitigation strategies](https://www.iad.gov/iad/library/ia-guidance/iads-top-10-information-assurance-mitigation-strategies.cfm).
+
 This project contains scripts and configuration files for aiding administrators in implementing Microsoft AppLocker as outlined in the [Application Whitelisting using Microsoft AppLocker](https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm) paper. 
 
 **The starter policy provided in this repository is for Windows 7 and Windows 10**. A Group Policy Object (GPO) for Windows 10 can also be found in the [AppLocker folder](https://github.com/iadgov/Secure-Host-Baseline/tree/master/AppLocker) in the [Secure Host Baseline repository](https://github.com/iadgov/Secure-Host-Baseline/).
+
+## Guidance
+NSA Information Assurance has a security guide for AppLocker called [Application Whitelisting Using Microsoft AppLocker](https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm).
+
+## Links
+
+* [Microsoft Requirements to use AppLocker](https://technet.microsoft.com/en-us/itpro/windows/keep-secure/requirements-to-use-applocker)
+* [Microsoft AppLocker Policies Deployment Guide](https://technet.microsoft.com/en-us/itpro/windows/keep-secure/applocker-policies-deployment-guide)
 
 ## License
 This Work was prepared by a United States Government employee and, therefore, is excluded from copyright by Section 105 of the Copyright Act of 1976.
