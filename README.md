@@ -4,7 +4,7 @@ Microsoft AppLocker is an [application whitelisting](https://www.iad.gov/iad/lib
 
 This project contains scripts and configuration files for aiding administrators in implementing Microsoft AppLocker as outlined in the [Application Whitelisting using Microsoft AppLocker](https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm) paper. 
 
-**The starter policy provided in this repository is for Windows 7 and Windows 10**. A Group Policy Object (GPO) for Windows 10 can be found in the [AppLocker folder](https://github.com/iadgov/Secure-Host-Baseline/tree/master/AppLocker) in the [Secure Host Baseline repository](https://github.com/iadgov/Secure-Host-Baseline/).
+**The starter policy provided in this repository is for Windows 7 and Windows 10**. A Group Policy Object (GPO) for Windows 10 can be found in the [AppLocker folder](https://github.com/nsacyber/Windows-Secure-Host-Baseline/tree/master/AppLocker) in the [Windows Secure Host Baseline repository](https://github.com/nsacyber/Windows-Secure-Host-Baseline/).
 
 ## Guidance
 NSA Information Assurance has a security guide for AppLocker called [Application Whitelisting Using Microsoft AppLocker](https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm).
