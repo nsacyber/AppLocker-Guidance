@@ -887,7 +887,7 @@ Once applied, the events will need to be reviewed to tailor the policy to the ne
       </Conditions>
     </FilePublisherRule>
     <!-- generated KILL.EXE rule by downloading windows debugging tools and getting information from there. Kill not actually present on current systems-->
-    <FilePublisherRule Id="44e50f01-5279-4286-b140-bdbab33bf3ac" Name="KILL.EXE version 10.0.22621.755 exactly in MICROSOFT® WINDOWS® OPERATING SYSTEM  from O=MICROSOFT CORPORATION, L=REDMOND, S=WASHINGTON, C=US" Description="" UserOrGroupSid="S-1-1-0" Action=Deny>
+    <FilePublisherRule Id="44e50f01-5279-4286-b140-bdbab33bf3ac" Name="KILL.EXE version 10.0.22621.755 exactly in MICROSOFT® WINDOWS® OPERATING SYSTEM  from O=MICROSOFT CORPORATION, L=REDMOND, S=WASHINGTON, C=US" Description="" UserOrGroupSid="S-1-1-0" Action="Deny">
       <Conditions>
         <FilePublisherCondition PublisherName="O=MICROSOFT CORPORATION, L=REDMOND, S=WASHINGTON, C=US" ProductName="MICROSOFT® WINDOWS® OPERATING SYSTEM" BinaryName="KILL.EXE">
           <BinaryVersionRange LowSection="*" HighSection="*" />
